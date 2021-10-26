@@ -1,0 +1,83 @@
+html, body, header, main, footer, article, div, span, p, a, figure, img, small{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    outline: none;
+}
+figure>img{
+    width: 150px;
+    margin: 10px;
+}
+.coluna-paises>img{
+    width: 25px;
+    margin-right: 10px;
+}
+h1{
+    color: blanchedalmond;
+    margin-left: 100px;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.linha{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+section .linha:nth-child(2n+1){
+    background-color:#e6e6e6;
+
+}
+article .coluna{
+    padding: 0 20px;
+}
+.coluna-paises{
+    flex-grow:2;
+}
+#medalhas{
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    text-align: center;
+    line-height: 48px;
+    border-radius: 100%;
+    border: 10px solid #fff;
+    flex-basis: 90px;
+}
+.coluna-medalhas-O{
+    background-color:rgb(255, 187, 0) ;
+}
+.coluna-medalhas-P{
+    background-color:rgb(173, 171, 165) ;
+}
+.coluna-medalhas-B{
+    background-color:rgb(172, 134, 73) ;
+}
+.medalha_ouro, .medalha_prata, .medalha_bronze{
+    flex-basis: 89px;
+}
+.coluna_total{
+    flex-basis: 50px;
+}
+.coluna-rank{
+    flex-basis: 100px;
+}
+
+body>header{
+    background: black;
+}
+
+article>header{
+    font-size: 25px;
+    font-weight: bold;
+}
+section{
+    font-size: 25px;
+    overflow-y: scroll;
+    height: 350px;
+}
