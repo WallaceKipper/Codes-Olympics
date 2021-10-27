@@ -34,7 +34,17 @@ h1 {
     padding: 20px 0;
 }
 
+.titles-table {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
 section .linha:nth-child(2n+1) {
+    background-color: #e6e6e6;
+}
+
+section .titles-table:nth-child(2n+1) {
     background-color: #e6e6e6;
 }
 

@@ -112,17 +112,16 @@ function criarTemplateLinha(index, pais, flag_url, ouro, prata, bronze) {
     quadroMedalhas.appendChild(linha)
 }
 
-function tratarPaises() {
-    let paisesOrdenados = ordenarPaises(PAISES)
+function tratarPaises(countries) {
+    let paisesOrdenados = ordenarPaises(countries)
     for (let i = 0; i < paisesOrdenados.length; i++) {
         const PAIS = paisesOrdenados[i];
         criarTemplateLinha(i, PAIS.pais, PAIS.flag_url, PAIS.ouro, PAIS.prata, PAIS.bronze)
-
     }
 }
-tratarPaises()
-function ordenarPaises(PAISES) {
-    let newPAISES = PAISES.map(somarTotal).sort((a, b) => b.ouro - a.ouro)
+tratarPaises(PAISES)
+function ordenarPaises(countriesResult) {
+    let newPAISES = countriesResult.map(somarTotal).sort((a, b) => b.ouro - a.ouro)
     return newPAISES
 }
 function somarTotal(pais) {
@@ -208,4 +207,18 @@ function criarTotal(total) {
     coluna_total_titulo.innerText = total
     coluna_total.appendChild(coluna_total_titulo)
     return coluna_total
+}
+
+
+function searchCountryByName() {
+    const inputValue = document.getElementById('input-search').value
+    const regexFilter = new RegExp(`${inputValue}`)
+    const countries = PAISES.filter(pais => !!regexFilter.test(pais.pais))
+    if (countries.length) {
+        const childs = document.getElementsByClassName('linha')    
+        while(childs.length > 0){
+            childs[0].parentNode.removeChild(childs[0]);
+        }
+        tratarPaises(countries)
+    }
 }
